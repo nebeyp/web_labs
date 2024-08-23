@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактор таблиц</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        button {
+            background-color: #555555;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        /* Стили для времени */
+        p[name^="moscowTime"],
+        p[name^="newYorkTime"],
+        p[name^="tokyoTime"] {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+                /* Стили для времени */
+        .time-container {
+            text-align: center;
+        }
+
+        .time-container p {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 400px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #333;
+            padding: 0 10px;
+        }
+
+        button.cancel {
+            all:initial;
+        }
+    </style>
+</head>
+<body>
+    <header class="myclass1" style="margin: 0 auto; text-align: center;">
+        <h1>Редактор таблиц</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="index2.html">Доп. информация</a></li>
+                <li><a href="index3.html">Источники</a></li>
+                <li><a href="third.html">Редактор JavaScript</a></li>
+                <li><a href="third_dop.html">Редактор рисунков</a></li>
+                <li><a href="index4.html">Редактор таблиц</a></li>
+                <li><a href="forma.html">Анкета</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <br><br><button name="showTimeButton">Показать время в разных часовых поясах</button>
+    
+    <div class="time-container">
+        <p name="moscowTime"></p>
+        <p name="newYorkTime"></p>
+        <p name="tokyoTime"></p>
+    </div>
+
+    <table border="1" style="margin: 0 auto;" name = "myTable">
+        <caption><h3>Плюсы и минусы параллельного вычисления</h3></caption>
+        <colgroup>
+            <col span="1">
+            <col span="2">
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2">Аспект</th>
+                <th colspan="2">Показатели</th>
+            </tr>
+            <tr>
+                <th>Преимущества</th>
+                <th>Недостатки</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Производительность</td>
+                <td>Увеличение скорости выполнения задач</td>
+                <td>Возможность замедления из-за накладных расходов на координацию</td>
+            </tr>
+            <tr>
+                <td>Масштабируемость</td>
+                <td>Возможность обработки больших объемов данных</td>
+                <td>Сложность управления распределенными вычислениями</td>
+            </tr>
+            <tr>
+                <td>Надежность</td>
+                <td>Распределение риска сбоя на несколько узлов</td>
+                <td>Возможность ошибок в алгоритмах параллельных вычислений</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><img id="result" src="result.jpg" alt="icon"></td>
+                <td colspan="2">Параллельные вычисления предоставляют широкие возможности для увеличения производительности и эффективности, однако требуют внимательного управления и адаптации для минимизации рисков и недостатков.</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br><button name="addRowButton">Добавить пустую строку в таблицу</button><br>
+
+
+    <fieldset>
+        <legend>Добавление данных</legend>
+        <input type="text" name="aspectInput" placeholder="Аспект"><br>
+        <input type="text" name="advantageInput" placeholder="Преимущество"><br>
+        <input type="text" name="disadvantageInput" placeholder="Недостаток"><br>
+        <button name="addRow2Button">Добавить</button>
+    </fieldset>
+
+    <br><button name="changeColorButton">Поменять цвет</button>
+
+    <br><button name="changeTableSizeButton">Изменить размер шрифта в таблице</button>
+
+    <hr>
+
+    <footer>
+        <p><button class="cancel" name="FIO">АВТОР</button></p>
+        <address>
+            Написано <a href="mailto:webmaster@example.com">webmaster</a>. 
+            Посетите следующий сайт для более подробной информации: <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F">wikipedia.org</a>.
+        </address>
+        <p>Сайт был спроектирован и создан <time datetime="2024-02-20T08:00">20 февраля 2024</time>.</p>
+    </footer>
+</body>
+</html>

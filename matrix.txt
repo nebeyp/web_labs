@@ -1,0 +1,77 @@
+let n = prompt("Введите количество столбцов:");
+let m = prompt("Введите количество строк:");
+n = parseInt(n);
+m = parseInt(m);
+let matrix = [];
+let rowsToRemove = [];
+
+for (let i = 0; i < m; i++) {
+    matrix[i] = [];
+    for (let j = 0; j < n; j++) {
+        let value = prompt("Введите значение для [" + i + "][" + j + "]:");
+        matrix[i][j] = parseInt(value);
+    }
+}
+
+let originalMatrix = JSON.parse(JSON.stringify(matrix)); // Глубокая копия исходной матрицы
+
+console.log(originalMatrix); // Вывод исходной матрицы в консоль
+
+for (let i = 0; i < m; i++) {
+    let counter = 0;
+    for (let j = 0; j < n; j++) {
+        if (matrix[i][j] < 0){
+            counter+= 1;
+        }
+        if (counter > 3){
+            rowsToRemove.push(i);
+        }
+    }
+}
+
+for (let i = rowsToRemove.length - 1; i >= 0; i--) {
+    matrix.splice(rowsToRemove[i], 1);
+}
+
+let matrixString = "";
+for (let i = 0; i < matrix.length; i++) {
+    matrixString += matrix[i].join("\t") + "\n";
+}
+
+matrixString
+
+///////////////////////////////////////////////////////////////////////////////
+
+var canvas = document.getElementById("drawingCanvas");
+var context = canvas.getContext("2d");
+context.clearRect(0, 0, 400, 200);
+
+
+context.strokeStyle="rgba(56, 93, 138, 1)";             
+context.lineWidth = 1;
+context.strokeRect(14, 8, 158, 115);
+
+
+for (i=1; i < 6; i++){  
+   for (j=1;j<6;j++){
+      if (i != 5 || j != 2){          
+          context.lineWidth = 4;
+          context.strokeRect(j*28,i*20,15,12);         
+         }
+      context.fillRect(j * 28, i * 20, 15, 12);
+   }
+}
+
+for (i=1; i < 6; i++){
+   for (j=4; j<6; j++){
+       context.fillStyle="rgba(255, 255, 0, 1)";
+       context.fillRect(j * 28, i * 20, 15, 12);
+   }
+}
+
+for (i=1; i < 6; i++){
+   for (j=1; j<4; j++){
+       context.fillStyle="rgba(79, 129, 189, 1)"; 
+       context.fillRect(j * 28, i * 20, 15, 12);
+   }
+}

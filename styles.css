@@ -1,0 +1,120 @@
+/* Стили для заголовков */
+h1, h2, h3 { 
+     color: #336699; /* Цвет текста */
+}
+
+/*Стили для списка ссылок в навигации */
+nav ul li a {
+    color: #333;
+    font-weight: bold;
+}
+
+.myclass1 {
+    background-color: rgb(254, 115, 249);
+    border-radius: 50px; 
+
+}
+
+/* Стили для таблиц */
+table {
+    border-collapse: collapse;
+    width: 45%;
+    margin: 0 auto; 
+}
+
+table th, table td {
+    border: 10px solid #676767; /* Увеличиваем толщину границ */
+    padding: 10px;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #acacac; /* Цвет фона для четных строк */
+}
+
+table th {
+    background-color: #f0f0f0; 
+}
+
+
+table colgroup col:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+#result {
+    width: 300px;
+}
+
+/* Стили для изображений */
+img {
+    max-width: 100%; 
+    height: auto;
+    display: block; 
+    margin: 0 auto;
+}
+
+/* Стили для текста кода */
+code {
+    display: block;
+    background-color: #f0f0f0; 
+    padding: 2.64583mm;
+    margin: 10px 0;
+    overflow-x: auto;
+}
+
+
+
+/* Стили для выделенного текста */
+mark {
+    background-color: #ff0;
+    padding: 2px;
+}
+
+/* Стили для ссылок */
+a:link, a:visited {
+    color: blue;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff0000; 
+    /* Цвет ссылки при наведении */
+}
+
+
+dl {
+    counter-reset: my-counter; /* Сброс счетчика */
+}
+
+dt {
+    margin-top: 40px; /* Отступ сверху для разделов */
+}
+
+dt::before {
+    counter-increment: my-counter; /* Увеличение счетчика */
+    content: counter(my-counter, upper-roman) ". "; /* Использование римских цифр и точки */
+    font-weight: bold; /* Жирный шрифт для маркировки */
+}
+
+dd {
+    margin-left: 0; /* Отступ слева для определений */
+}
+
+nav ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+footer {
+    text-align: center; /* Выравнивание текста по центру */
+    padding: 20px 0; /* Поля вокруг текста */
+    background-color: rgb(254, 115, 249); /* Цвет фона */
+    color: #333; /* Цвет текста */
+    border-radius: 50px; 
+}
+
+/* Стили для адреса в футере */
+footer address {
+    font-style: normal; /* Отменяем курсив */
+    color: #666; /* Цвет текста адреса */
+}
